@@ -33,12 +33,8 @@ endif
 set wildmenu
 
 set showmatch
-
-set laststatus=2
-
 set incsearch
 set hlsearch
-
 set ignorecase
 set smartcase
 
@@ -51,3 +47,5 @@ set softtabstop=4
 set autoindent
 
 set noswapfile
+
+set laststatus=2
