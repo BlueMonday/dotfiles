@@ -1,3 +1,22 @@
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+"
+" original repos on GitHub
+Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+
+filetype indent plugin on
+
 set t_Co=256
 colorscheme molokai
 
@@ -15,10 +34,13 @@ set wildmenu
 
 set showmatch
 
+set laststatus=2
+
 set incsearch
 set hlsearch
 
-filetype indent plugin on
+set ignorecase
+set smartcase
 
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -27,3 +49,5 @@ set shiftwidth=4
 set softtabstop=4
 
 set autoindent
+
+set noswapfile
