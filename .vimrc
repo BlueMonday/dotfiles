@@ -26,11 +26,12 @@ set nu
 set cursorline
 if exists('+colorcolumn')
     set colorcolumn=80
-else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
 set wildmenu
+set autoindent
+set noswapfile
+set hidden
 
 set showmatch
 set incsearch
@@ -44,8 +45,11 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
-set autoindent
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
-set noswapfile
-
+" Airline
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
