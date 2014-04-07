@@ -30,6 +30,7 @@ if exists('+colorcolumn')
 endif
 
 set wildmenu
+set wildignore=*.o,*.pyc
 set autoindent
 set noswapfile
 set hidden
@@ -44,6 +45,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set expandtab
 set shiftwidth=4
+set tabstop=4
 set softtabstop=4
 
 map <C-h> <C-w>h
