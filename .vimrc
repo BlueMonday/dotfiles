@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-unimpaired'
 
 filetype indent plugin on
 
