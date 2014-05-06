@@ -15,6 +15,7 @@ Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'scrooloose/syntastic'
 
 filetype indent plugin on
 
@@ -38,6 +39,7 @@ set hidden
 set showmatch
 set incsearch
 set hlsearch
+set scrolloff=5
 set ignorecase
 set smartcase
 
@@ -56,3 +58,7 @@ map <C-l> <C-w>l
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+
+" Syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
