@@ -1,0 +1,78 @@
+#! /bin/sh
+#
+# Example panel for LemonBoy's bar
+
+. ~/.config/bspwm/panel/panel.cfg
+
+num_mon=$(bspc query -M | wc -l)
+
+while read -r line ; do
+	case $line in
+		S*)
+			# clock output
+			sys_infos="%{F$STATUS_FG}%{B$STATUS_BG} ${line#?} %{B-}%{F-}"
+			;;
+		T*)
+			# xtitle output
+			title="%{F$TITLE_FG}%{B$TITLE_BG} ${line#?} %{B-}%{F-}"
+			;;
+        B*)
+            #bat="${line#?}"
+            bat="%{F$STATUS_FG}%{B$STATUS_BG} ${line#?} %{B-}%{F-}"
+            ;;
+		W*)
+			# bspwm internal state
+			wm_infos=""
+			IFS=':'
+			set -- ${line#?}
+			while [ $# -gt 0 ] ; do
+				item=$1
+				name=${item#?}
+				case $item in
+					M*)
+						# active monitor
+						if [ $num_mon -gt 1 ] ; then
+							wm_infos="$wm_infos %{F$ACTIVE_MONITOR_FG}%{B$ACTIVE_MONITOR_BG} ${name} %{B-}%{F-}  "
+						fi
+						;;
+					m*)
+						# inactive monitor
+						if [ $num_mon -gt 1 ] ; then
+							wm_infos="$wm_infos %{F$INACTIVE_MONITOR_FG}%{B$INACTIVE_MONITOR_BG} ${name} %{B-}%{F-}  "
+						fi
+						;;
+					O*)
+						# focused occupied desktop
+						wm_infos="${wm_infos}%{F$FOCUSED_OCCUPIED_FG}%{B$FOCUSED_OCCUPIED_BG}%{U$FOREGROUND}%{+u} ${name} %{-u}%{B-}%{F-}"
+						;;
+					F*)
+						# focused free desktop
+						wm_infos="${wm_infos}%{F$FOCUSED_FREE_FG}%{B$FOCUSED_FREE_BG}%{U$FOREGROUND}%{+u} ${name} %{-u}%{B-}%{F-}"
+						;;
+					U*)
+						# focused urgent desktop
+						wm_infos="${wm_infos}%{F$FOCUSED_URGENT_FG}%{B$FOCUSED_URGENT_BG}%{U$FOREGROUND}%{+u} ${name} %{-u}%{B-}%{F-}"
+						;;
+					o*)
+						# occupied desktop
+						wm_infos="${wm_infos}%{F$OCCUPIED_FG}%{B$OCCUPIED_BG} ${name} %{B-}%{F-}"
+						;;
+					f*)
+						# free desktop
+						wm_infos="${wm_infos}%{F$FREE_FG}%{B$FREE_BG} ${name} %{B-}%{F-}"
+						;;
+					u*)
+						# urgent desktop
+						wm_infos="${wm_infos}%{F$URGENT_FG}%{B$URGENT_BG} ${name} %{B-}%{F-}"
+						;;
+					L*)
+						# layout
+						wm_infos="$wm_infos  %{F$LAYOUT_FG}%{B$LAYOUT_BG} %{B-}%{F-}"
+						;;
+				esac
+				shift
+			done
+			;;
+	esac
+	printf "%s\n" "%{l}${wm_infos}%{c}${title}%{r}${bat}${sys_infos}"
+done
