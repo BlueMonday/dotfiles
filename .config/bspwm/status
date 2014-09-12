@@ -2,7 +2,7 @@
 
 #Define the battery
 Battery() {
-    BATPERC=$(acpi --battery | awk -F, '{print $2}' | tail -1)
+    BATPERC=$(acpi --battery | awk -F, '{print $2}' | head -1)
     echo "$BATPERC"
 }
 

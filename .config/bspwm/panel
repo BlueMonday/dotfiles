@@ -1,6 +1,6 @@
 #! /bin/sh
 
-. ~/.config/bspwm/panel/panel.cfg
+. ~/.config/bspwm/panel.cfg
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -15,9 +15,9 @@ mkfifo "$PANEL_FIFO"
 bspc config top_padding $PANEL_HEIGHT
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-~/.config/bspwm/panel/status > "$PANEL_FIFO" &
+~/.config/bspwm/status > "$PANEL_FIFO" &
 clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
 
-cat "$PANEL_FIFO" | ~/.config/bspwm/panel/panel_bar | bar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$FOREGROUND" -B "$BACKGROUND" &
+cat "$PANEL_FIFO" | ~/.config/bspwm/panel_bar | bar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$FOREGROUND" -B "$BACKGROUND" &
 
 wait

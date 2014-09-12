@@ -16,4 +16,4 @@ bspc rule -a mplayer2 floating=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-~/.config/bspwm/panel/panel &
+~/.config/bspwm/panel &

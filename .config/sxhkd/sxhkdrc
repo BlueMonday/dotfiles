@@ -84,7 +84,7 @@ alt + Return
 	urxvt
 
 alt + r
-	dmenu_run
+    dmenu_run -fn "-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*"
 
 alt + x
     dm-tool lock
