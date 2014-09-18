@@ -22,5 +22,7 @@ URxvt*scrollBar: false
 URxvt*urlLauncher: google-chrome-stable
 URxvt*font: xft:Terminus:pixelsize=18
 URxvt*boldFont: xft:Terminus:pixelsize=18
+URxvt*cursorBlink: true
 URxvt.transparent: true
 URxvt.shading: 20
+
