@@ -17,6 +17,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/syntastic'
 Bundle 'tomasr/molokai'
+Plugin 'Valloric/YouCompleteMe'
 
 filetype indent plugin on
 
@@ -63,3 +64,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
+
+"" YCM
+let g:ycm_autoclose_preview_window_after_completion=1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
