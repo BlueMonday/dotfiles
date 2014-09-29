@@ -57,6 +57,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+let mapleader=","
+
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
