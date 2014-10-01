@@ -2,24 +2,26 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My bundles here:
 "
 " original repos on GitHub
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/syntastic'
-Bundle 'tomasr/molokai'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
 
-filetype indent plugin on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype indent plugin on    " required
 
 set t_Co=256
 colorscheme molokai
