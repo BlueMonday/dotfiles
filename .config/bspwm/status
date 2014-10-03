@@ -1,13 +1,18 @@
 #!/bin/bash
 
 #Define the battery
-Battery() {
+Battery1() {
     BATPERC=$(acpi --battery | awk -F, '{print $2}' | head -1)
     echo "$BATPERC"
 }
 
+Battery2() {
+   BATPERC=$(acpi --battery | awk -F, '{print $2}' | tail -1)
+   echo "$BATPERC"
+}
+
 # Print the percentage
 while true; do
-    echo "B$(Battery)"
+    echo "B Batt1:$(Battery1) Batt2:$(Battery2)"
     sleep 1;
 done
