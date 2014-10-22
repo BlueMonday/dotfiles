@@ -19,10 +19,10 @@ URxvt*color14: #4eb4fa
 URxvt*color15: #d0d0d0
 
 URxvt*scrollBar: false
-URxvt*urlLauncher: google-chrome-stable
+URxvt*urlLauncher: /usr/bin/chromium
 URxvt*font: xft:Terminus:pixelsize=18
 URxvt*boldFont: xft:Terminus:pixelsize=18
 URxvt*cursorBlink: true
+Urxvt.loginShell: true
 URxvt.transparent: true
 URxvt.shading: 20
-
