@@ -84,10 +84,16 @@ alt + Return
 	urxvt
 
 alt + r
-    ~/.config/sxhkd/dmenu
+    dmenu_run -fn "-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*"
 
 alt + x
     dm-tool lock
+
+XF86Audio{Raise,Lower}Volume
+    amixer sset Master {1+,1-} unmute
+
+XF86AudioMute
+    amixer sset Master toggle
 
 # make sxhkd reload its configuration files:
 alt + Escape
