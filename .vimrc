@@ -34,6 +34,8 @@ if exists('+colorcolumn')
     set colorcolumn=80
 endif
 
+let mapleader=","
+
 set wildmenu
 set wildignore=*.o,*.pyc
 set autoindent
@@ -59,7 +61,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-let mapleader=","
+" repeated visual indentation
+vnoremap > >gv
+vnoremap < <gv
 
 " Airline
 set laststatus=2
