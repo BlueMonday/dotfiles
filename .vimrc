@@ -42,7 +42,6 @@ set autoindent
 set noswapfile
 set hidden
 
-set showmatch
 set incsearch
 set hlsearch
 set scrolloff=5
