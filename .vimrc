@@ -18,6 +18,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-commentary'
+Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
@@ -67,13 +68,16 @@ vnoremap < <gv
 
 " Airline
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled=1
 
 " Syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open=1
+let g:syntastic_aggregate_errors=1
 
 "" YCM
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"" indentLine
+let g:indentLine_faster=1
