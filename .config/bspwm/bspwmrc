@@ -10,7 +10,6 @@ bspc config focus_by_distance   true
 
 bspc monitor -d 1 2 3 4 5 6 7
 
-bspc rule -a Gimp follow=on floating=on
-bspc rule -a tk floating=on
+bspc rule -a Gimp desktop=^8 follow=on floating=on
 
-~/.config/bspwm/panel &
+~/.config/bspwm/panel/panel &

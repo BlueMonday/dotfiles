@@ -1,0 +1,73 @@
+#! /bin/sh
+
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_HEIGHT=24
+PANEL_FONT_FAMILY="-misc-stlarch-medium-r-normal-*-10-100-75-75-c-80-iso10646-1,-*-terminus-medium-r-normal-*-14-*-*-*-c-*-*-1"
+
+CLK_ICON=$(echo -e '\ue017')
+BATT_ICON=$(echo -e '\ue037')
+VOL_ICON=$(echo -e '\ue05d')
+WIFI_ICON=$(echo -e '\ue0f0')
+
+clock() {
+    while true; do
+        DATE=$(date "+%d/%m/%y ${CLK_ICON} %H:%M")
+        echo "C${DATE}"
+        sleep 1
+    done
+
+}
+
+battery() {
+    while true; do
+        BAT1=$(acpi --battery | awk -F, '{print $2}' | head -1)
+        BAT2=$(acpi --battery | awk -F, '{print $2}' | tail -1)
+        echo "B${BATT_ICON}${BAT1} ${BATT_ICON}${BAT2}"
+        sleep 1;
+    done
+}
+
+volume() {
+    while true; do
+        VOL=$(amixer sget Master | awk '$0~/%/{print $4}' | tr -d '[]%')
+        echo "V${VOL_ICON} ${VOL}"
+        sleep 1
+    done
+}
+
+wifi_ssid() {
+    while true; do
+        if [[ -n $(iwgetid -r) ]]; then
+            ESSID=$(iwgetid -r)
+        else
+            ESSID="null"
+        fi
+
+        echo "S${WIFI_ICON} ${ESSID}"
+        sleep 1
+    done
+}
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc config top_padding $PANEL_HEIGHT
+bspc control --subscribe > "$PANEL_FIFO" &
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+clock > "$PANEL_FIFO" &
+battery > "$PANEL_FIFO" &
+volume > "$PANEL_FIFO" &
+wifi_ssid > "$PANEL_FIFO" &
+
+. ~/.config/bspwm/panel/panel_colors
+
+cat "$PANEL_FIFO" | ~/.config/bspwm/panel/panel_bar | bar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+
+wait
