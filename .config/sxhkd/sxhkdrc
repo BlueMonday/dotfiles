@@ -90,7 +90,7 @@ alt + x
     dm-tool lock
 
 XF86Audio{Raise,Lower}Volume
-    amixer sset Master {1+,1-} unmute
+    amixer sset Master {5+,5-} unmute
 
 XF86AudioMute
     amixer sset Master toggle
