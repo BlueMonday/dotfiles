@@ -18,11 +18,27 @@ URxvt*color13: #bb88dd
 URxvt*color14: #4eb4fa
 URxvt*color15: #d0d0d0
 
-URxvt*scrollBar: false
-URxvt*urlLauncher: /usr/bin/chromium
-URxvt*font: xft:Terminus:pixelsize=18
-URxvt*boldFont: xft:Terminus:pixelsize=18
-URxvt*cursorBlink: true
+URxvt.perl-ext-common: default,clipboard,matcher
+
+! matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+
+! clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+URxvt.scrollBar: false
+URxvt.font: xft:Terminus:pixelsize=18
+URxvt.boldFont: xft:Terminus:pixelsize=18
+URxvt.cursorBlink: true
 Urxvt.loginShell: true
 URxvt.transparent: true
 URxvt.shading: 20
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.hintstyle:  hintslight
