@@ -28,6 +28,8 @@ filetype indent plugin on    " required
 set t_Co=256
 colorscheme molokai
 
+set shell=zsh
+
 syntax on
 set nu
 
