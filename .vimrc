@@ -75,6 +75,7 @@ vnoremap < <gv
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
 
 " Syntastic
 let g:syntastic_check_on_open=1
