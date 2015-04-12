@@ -21,6 +21,7 @@ Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-commentary'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
