@@ -37,6 +37,8 @@ Urxvt.loginShell: true
 URxvt.transparent: true
 URxvt.shading: 20
 
+URxvt.letterSpace: -1
+
 Xft.dpi:        96
 Xft.antialias:  true
 Xft.hinting:    true
