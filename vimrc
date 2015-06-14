@@ -1,41 +1,27 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
-
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/vundle'
-
-" My bundles here:
-"
-" original repos on GitHub
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-commentary'
-Plugin 'Yggdroot/indentLine'
-Plugin 'tomasr/molokai'
-Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'airblade/vim-gitgutter'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype indent plugin on    " required
-
-set t_Co=256
-colorscheme molokai
-
-set shell=zsh
+call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-commentary'
+Plug 'Yggdroot/indentLine'
+Plug 'tomasr/molokai'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'airblade/vim-gitgutter'
+call plug#end()
 
 syntax on
 set nu
+
+set t_Co=256
+colorscheme molokai
+hi Normal ctermbg=NONE
+
+set shell=zsh
 
 set cursorline
 if exists('+colorcolumn')
