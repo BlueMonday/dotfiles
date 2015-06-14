@@ -21,6 +21,7 @@ Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-commentary'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,7 +37,7 @@ set nu
 
 set cursorline
 if exists('+colorcolumn')
-    set colorcolumn=80
+    autocmd FileType python set colorcolumn=80
 endif
 
 let mapleader=","
@@ -46,6 +47,7 @@ set wildignore=*.o,*.pyc
 set autoindent
 set noswapfile
 set hidden
+set undofile
 
 set incsearch
 set hlsearch
