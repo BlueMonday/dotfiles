@@ -22,6 +22,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
 Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
@@ -84,6 +85,12 @@ let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '●'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_modified_removed = '●✘'
+
+" RainbowParentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Syntastic
 let g:syntastic_check_on_open=1
