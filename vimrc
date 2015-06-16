@@ -34,6 +34,7 @@ set wildmenu
 set wildignore=*.o,*.pyc
 set autoindent
 set noswapfile
+set undodir=~/.vim/undo
 set hidden
 set undofile
 
