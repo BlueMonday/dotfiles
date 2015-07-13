@@ -3,6 +3,8 @@ Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sensible'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go'
@@ -14,8 +16,8 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-syntax on
 set nu
+set rnu
 
 set t_Co=256
 colorscheme molokai
@@ -30,15 +32,12 @@ endif
 
 let mapleader=","
 
-set wildmenu
 set wildignore=*.o,*.pyc
-set autoindent
 set noswapfile
 set undodir=~/.vim/undo
 set hidden
 set undofile
 
-set incsearch
 set hlsearch
 set scrolloff=5
 set ignorecase
@@ -63,7 +62,6 @@ vnoremap > >gv
 vnoremap < <gv
 
 " Airline
-set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
