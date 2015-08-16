@@ -14,6 +14,7 @@ Plug 'tomasr/molokai'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'rodjek/vim-puppet'
 call plug#end()
 
 set nu
