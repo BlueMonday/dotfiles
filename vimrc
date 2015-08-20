@@ -62,6 +62,8 @@ set completeopt-=preview
 vnoremap > >gv
 vnoremap < <gv
 
+autocmd FileType yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
+
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
