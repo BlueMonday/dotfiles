@@ -15,6 +15,8 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rodjek/vim-puppet'
+Plug 'godlygeek/tabular'
+Plug 'fisadev/vim-isort'
 call plug#end()
 
 set nu
@@ -62,7 +64,7 @@ set completeopt-=preview
 vnoremap > >gv
 vnoremap < <gv
 
-autocmd FileType yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript,json,yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
