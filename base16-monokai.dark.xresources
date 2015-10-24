@@ -1,0 +1,41 @@
+! Base16 Monokai
+! Scheme: Wimer Hazenberg (http://www.monokai.nl)
+
+#define base00 #272822
+#define base01 #383830
+#define base02 #49483e
+#define base03 #75715e
+#define base04 #a59f85
+#define base05 #f8f8f2
+#define base06 #f5f4f1
+#define base07 #f9f8f5
+#define base08 #f92672
+#define base09 #fd971f
+#define base0A #f4bf75
+#define base0B #a6e22e
+#define base0C #a1efe4
+#define base0D #66d9ef
+#define base0E #ae81ff
+#define base0F #cc6633
+
+URxvt*foreground:   base05
+URxvt*background:   base00
+URxvt*cursorColor:  base05
+
+URxvt*color0:       base00
+URxvt*color1:       base08
+URxvt*color2:       base0B
+URxvt*color3:       base0A
+URxvt*color4:       base0D
+URxvt*color5:       base0E
+URxvt*color6:       base0C
+URxvt*color7:       base05
+
+URxvt*color8:       base03
+URxvt*color9:       base09
+URxvt*color10:      base01
+URxvt*color11:      base02
+URxvt*color12:      base04
+URxvt*color13:      base06
+URxvt*color14:      base0F
+URxvt*color15:      base07

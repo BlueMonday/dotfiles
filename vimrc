@@ -10,21 +10,21 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
-Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 Plug 'fisadev/vim-isort'
+Plug 'rking/ag.vim'
 call plug#end()
 
 set nu
 set rnu
 
-set t_Co=256
-colorscheme molokai
-hi Normal ctermbg=NONE
+set t_Co=16
+colorscheme base16-monokai
 
 set shell=zsh
 
