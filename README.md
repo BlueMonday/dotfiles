@@ -22,6 +22,12 @@ Install `gvim-python3` for vim with python3 interpreter support and full X suppo
 sudo pacman -S gvim-python3
 ```
 
+Create undo directory.
+
+```
+mkdir ~/.vim/undo
+```
+
 ### Plugins
 
 Install `plug.vim`
