@@ -44,8 +44,9 @@ Install `the_silver_searcher`.
 sudo pacman -S the_silver_searcher
 ```
 
-Install python libraries required by plugins.
+Install python and javascript libraries required by plugins.
 
 ```
 pip install isort flake8
+npm install -g jshint
 ```
