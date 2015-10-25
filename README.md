@@ -13,6 +13,27 @@ Sync dotfiles!
 dotfiles --sync -C .dotfilesrc
 ```
 
+Fonts
+-----
+
+Create user font directory (`~/.fonts` is deprecated).
+
+```
+mkdir ~/.local/share/fonts
+```
+
+Download font.
+
+```
+cd ~/.local/share/fonts && curl -fLo DroidSansMonoforPowerlinePlusNerdFileTypesMonoPlusFontAwesomePlusOcticonsPlusPomicons.otf https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline%20Plus%20Nerd%20File%20Types%20Mono%20Plus%20Font%20Awesome%20Plus%20Octicons%20Plus%20Pomicons.otf
+```
+
+Build font information cache files.
+
+```
+fc-cache -vf
+```
+
 Vim
 ---
 

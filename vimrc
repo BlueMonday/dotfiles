@@ -18,6 +18,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 Plug 'fisadev/vim-isort'
 Plug 'rking/ag.vim'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set nu
@@ -71,11 +72,11 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
 " gitgutter
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '●'
-let g:gitgutter_sign_removed = '✘_'
-let g:gitgutter_sign_modified_removed = '●✘'
-let g:gitgutter_sign_removed_first_line = '✘‾'
+let g:gitgutter_sign_added='✚'
+let g:gitgutter_sign_modified='●'
+let g:gitgutter_sign_removed='✘_'
+let g:gitgutter_sign_modified_removed='●✘'
+let g:gitgutter_sign_removed_first_line='✘‾'
 
 " RainbowParentheses
 au VimEnter * RainbowParenthesesToggle
@@ -86,7 +87,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors=1
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_error_symbol='➔'
 let g:syntastic_style_error_symbol='➔'
 let g:syntastic_warning_symbol='!'
@@ -94,7 +95,7 @@ let g:syntastic_style_warning_symbol='!'
 
 " neocomplete
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup=0
 let g:neocomplete#enable_at_startup=1
 let g:neocomplete#enable_smart_case=1
 let g:neocomplete#sources#syntax#min_keyword_length=2
@@ -103,17 +104,17 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+    let g:neocomplete#keyword_patterns={}
 endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns['default']='\h\w*'
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns={}
 endif
 
 " golang fix
-let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+let g:neocomplete#sources#omni#input_patterns.go='[^.[:digit:] *\t]\.\w*'
 
 "" indentLine
 let g:indentLine_faster=1

@@ -1,4 +1,4 @@
-#include ".Xresources.base16-monokai.dark"
+#include "Xresources.base16-monokai.dark"
 
 URxvt.intensityStyles: false
 
@@ -14,10 +14,10 @@ URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 URxvt.scrollBar: false
-URxvt.font: xft:Dejavu\ Sans\ Mono:pixelsize=18,xft:Dejavu\ Sans\ Mono\ for\ Powerline:pixelsize=18
-URxvt.boldFont: xft:Dejavu\ Sans\ Mono:pixelsize=18,xft:Dejavu\ Sans\ Mono\ for\ Powerline:pixelsize=18
+URxvt.font: xft:Droid Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:pixelsize=18
+URxvt.boldFont: xft:Droid Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:bold:pixelsize=18
 URxvt.cursorBlink: true
-Urxvt.loginShell: true
+URxvt.loginShell: true
 !URxvt.transparent: true
 !URxvt.shading: 20
 
