@@ -18,7 +18,6 @@ Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 Plug 'fisadev/vim-isort'
 Plug 'rking/ag.vim'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set nu
