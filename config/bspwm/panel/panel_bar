@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 PANEL_FIFO=/tmp/panel-fifo
 num_mon=$(bspc query -M | wc -l)

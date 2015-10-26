@@ -24,7 +24,7 @@ call plug#end()
 set nu
 set rnu
 
-set t_Co=16
+set t_Co=256
 colorscheme base16-monokai
 
 set shell=zsh
