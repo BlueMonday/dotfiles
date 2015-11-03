@@ -22,7 +22,7 @@ Install `neovim` and `python-neovim` (for python 3 plugin support).
 sudo pacman -S neovim python-neovim
 mkdir -p ~/.vim
 ln -s ~/.vim ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvm/init.vim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
 ```
 
 Create undo directory.
@@ -64,7 +64,18 @@ bspwm
 -----
 
 ```
-sudo pacman -S bspwm acpi wireless_tools xorg-xmodmap
+sudo pacman -S bspwm lightdm acpi wireless_tools xorg-xmodmap
+```
+
+```
+cat << EOF /usr/share/xsessions/bspwm.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=bspwm
+Comment=Binary space partitioning window manager
+Exec=bspwm
+Type=Application
+EOF
 ```
 
 sxhkd
