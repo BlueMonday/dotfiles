@@ -25,6 +25,7 @@ set rnu
 
 set t_Co=256
 colorscheme base16-monokai
+set background=dark
 
 set shell=zsh
 
@@ -115,5 +116,5 @@ endif
 " golang fix
 let g:neocomplete#sources#omni#input_patterns.go='[^.[:digit:] *\t]\.\w*'
 
-"" indentLine
+" indentLine
 let g:indentLine_faster=1

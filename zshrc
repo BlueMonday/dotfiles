@@ -30,7 +30,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+alias -g vim='nvim'
+
 export GOPATH=$HOME/go
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 
-export EDITOR='vim'
+export EDITOR='nvim'

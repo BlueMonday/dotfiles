@@ -87,7 +87,7 @@ alt + r
     dmenu_run -fn "-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*"
 
 alt + x
-    dm-tool lock
+    i3lock -c 000000
 
 XF86Audio{Raise,Lower}Volume
     amixer sset Master {5+,5-} unmute

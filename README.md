@@ -4,7 +4,7 @@ dotfiles
 Install `dotfiles` python tool.
 
 ```
-pip install dotfiles
+sudo pip install dotfiles
 ```
 
 Sync dotfiles!
@@ -13,19 +13,22 @@ Sync dotfiles!
 dotfiles --sync -C .dotfilesrc
 ```
 
-Vim
----
+neovim
+------
 
-Install `gvim-python3` for vim with python3 interpreter support and full X support.
+Install `neovim` and `python-neovim` (for python 3 plugin support).
 
 ```
-sudo pacman -S gvim-python3
+sudo pacman -S neovim python-neovim
+mkdir -p ~/.vim
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvm/init.vim
 ```
 
 Create undo directory.
 
 ```
-mkdir ~/.vim/undo
+mkdir -p ~/.vim/undo
 ```
 
 ### Plugins
@@ -53,6 +56,20 @@ sudo pacman -S the_silver_searcher
 Install python and javascript libraries required by plugins.
 
 ```
-pip install isort flake8
-npm install -g jshint
+sudo pip install isort flake8
+sudo npm install -g jshint
+```
+
+bspwm
+-----
+
+```
+sudo pacman -S bspwm acpi wireless_tools xorg-xmodmap
+```
+
+sxhkd
+-----
+
+```
+sudo pacman -S sxhkd dmenu rxvt-unicode i3lock xorg-xbacklight
 ```
