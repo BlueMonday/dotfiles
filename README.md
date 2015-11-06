@@ -16,10 +16,10 @@ dotfiles --sync -C .dotfilesrc
 neovim
 ------
 
-Install `neovim` and `python-neovim` (for python 3 plugin support).
+Install `neovim`, `xclip` (clipboard support), and `python-neovim` (for python 3 plugin support).
 
 ```
-sudo pacman -S neovim python-neovim
+sudo pacman -S neovim xclip python-neovim
 mkdir -p ~/.vim
 ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
