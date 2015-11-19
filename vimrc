@@ -18,6 +18,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 Plug 'fisadev/vim-isort'
 Plug 'rking/ag.vim'
+Plug 'hynek/vim-python-pep8-indent'
 call plug#end()
 
 set nu
