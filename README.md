@@ -16,10 +16,17 @@ dotfiles --sync -C .dotfilesrc
 neovim
 ------
 
-Install `neovim`, `xclip` (clipboard support), and `python-neovim` (for python 3 plugin support).
+Install `neovim`, `xclip` (clipboard support), and the python 2/3 neovim python modules.
 
 ```
-sudo pacman -S neovim xclip python-neovim
+sudo pacman -S neovim xclip
+sudo pip install neovim
+sudo pip2 install neovim
+```
+
+Link `vim` and `neovim` configuration.
+
+```
 mkdir -p ~/.vim
 ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
@@ -56,7 +63,7 @@ sudo pacman -S the_silver_searcher
 Install python and javascript libraries required by plugins.
 
 ```
-sudo pip install isort flake8
+sudo pip2 install isort flake8
 sudo npm install -g jshint
 ```
 

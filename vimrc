@@ -6,7 +6,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
@@ -62,11 +62,16 @@ map <C-l> <C-w>l
 
 set completeopt-=preview
 
+" Remove ex mode mapping. I have not once purposefully entered ex mode...
+nnoremap Q <Nop>
+
 " repeated visual indentation
 vnoremap > >gv
 vnoremap < <gv
 
-autocmd FileType javascript,json,yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
+augroup indentation
+    autocmd FileType javascript,json,yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
@@ -93,29 +98,6 @@ let g:syntastic_error_symbol='➔'
 let g:syntastic_style_error_symbol='➔'
 let g:syntastic_warning_symbol='!'
 let g:syntastic_style_warning_symbol='!'
-
-" neocomplete
-" Disable AutoComplPop.
-let g:acp_enableAtStartup=0
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#enable_smart_case=1
-let g:neocomplete#sources#syntax#min_keyword_length=2
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns={}
-endif
-let g:neocomplete#keyword_patterns['default']='\h\w*'
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns={}
-endif
-
-" golang fix
-let g:neocomplete#sources#omni#input_patterns.go='[^.[:digit:] *\t]\.\w*'
 
 " indentLine
 let g:indentLine_faster=1
