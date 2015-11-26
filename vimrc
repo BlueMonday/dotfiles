@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 Plug 'chriskempson/base16-vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rodjek/vim-puppet'
@@ -21,21 +22,17 @@ Plug 'rking/ag.vim'
 Plug 'hynek/vim-python-pep8-indent'
 call plug#end()
 
-set nu
-set rnu
-
 set t_Co=256
 colorscheme base16-monokai
 set background=dark
 
 set shell=zsh
+let mapleader=","
+
+set nu
+set rnu
 
 set cursorline
-if exists('+colorcolumn')
-    autocmd FileType python set colorcolumn=80
-endif
-
-let mapleader=","
 
 set wildignore=*.o,*.pyc
 set noswapfile
@@ -47,8 +44,6 @@ set hlsearch
 set scrolloff=5
 set ignorecase
 set smartcase
-
-autocmd BufWritePre * :%s/\s\+$//e
 
 set expandtab
 set shiftwidth=4
@@ -69,8 +64,25 @@ nnoremap Q <Nop>
 vnoremap > >gv
 vnoremap < <gv
 
+if exists('+colorcolumn')
+    augroup pep8colorcolumn
+        autocmd FileType python set colorcolumn=80
+    augroup END
+endif
+
+augroup whitespace
+    autocmd BufWritePre * StripWhitespace
+augroup END
+
 augroup indentation
     autocmd FileType javascript,json,yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
+
+augroup rainbowparentheses
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
 augroup END
 
 " Airline
@@ -83,12 +95,6 @@ let g:gitgutter_sign_modified='●'
 let g:gitgutter_sign_removed='✘_'
 let g:gitgutter_sign_modified_removed='●✘'
 let g:gitgutter_sign_removed_first_line='✘‾'
-
-" RainbowParentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 " Syntastic
 let g:syntastic_check_on_open=1
