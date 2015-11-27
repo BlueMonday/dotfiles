@@ -20,7 +20,7 @@ battery() {
 }
 
 volume() {
-    VOL=$(amixer sget Master | awk '$0~/%/{print $4}' | tr -d '[]%')
+    VOL=$(amixer -c 0 sget Master | awk '$0~/%/{print $4}' | tr -d '[]%')
     echo "V${VOL_ICON} ${VOL}"
 }
 

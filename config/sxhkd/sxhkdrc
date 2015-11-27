@@ -90,7 +90,7 @@ alt + x
     i3lock -c 000000
 
 XF86Audio{Raise,Lower}Volume
-    amixer sset Master {5+,5-} unmute
+    amixer -c 0 sset Master {5+,5-} unmute
 
 XF86AudioMute
     amixer sset Master toggle
