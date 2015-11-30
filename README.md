@@ -47,6 +47,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+YCM plugin installation requires CMake
+
+```
+sudo pacman -S cmake
+```
+
 Install plugins and all the necessary binaries for the go plugin.
 
 ```
