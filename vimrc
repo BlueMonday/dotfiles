@@ -20,6 +20,7 @@ Plug 'godlygeek/tabular'
 Plug 'fisadev/vim-isort'
 Plug 'rking/ag.vim'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'jtratner/vim-flavored-markdown'
 call plug#end()
 
 set t_Co=256
@@ -72,6 +73,11 @@ endif
 
 augroup whitespace
     autocmd BufWritePre * StripWhitespace
+augroup END
+
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
 augroup indentation
