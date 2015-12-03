@@ -1,4 +1,7 @@
 wmname LG3D
+
+xrdb -I$HOME ~/.Xresources
+
 xset +fp /usr/share/fonts/local
 xset fp rehash
 feh --bg-scale '/usr/share/backgrounds/wallpaper.jpg'
