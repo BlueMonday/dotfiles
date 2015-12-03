@@ -1,4 +1,4 @@
-#include "Xresources.base16-monokai.dark"
+#include ".Xresources.TomorrowNightEighties"
 
 URxvt.intensityStyles: false
 

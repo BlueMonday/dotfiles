@@ -10,7 +10,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
-Plug 'chriskempson/base16-vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'kien/rainbow_parentheses.vim'
@@ -21,10 +20,11 @@ Plug 'fisadev/vim-isort'
 Plug 'rking/ag.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'jtratner/vim-flavored-markdown'
+Plug 'chriskempson/vim-tomorrow-theme'
 call plug#end()
 
 set t_Co=256
-colorscheme base16-monokai
+colorscheme Tomorrow-Night-Eighties
 set background=dark
 
 set shell=zsh
