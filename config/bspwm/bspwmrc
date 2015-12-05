@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 bspc config border_width        2
 bspc config window_gap         12
@@ -8,9 +8,9 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
-bspc monitor -d 1 2 3 4 5 6 7
+bspc monitor -d $(echo -e '\uf268') $(echo -e '\uf121') $(echo -e '\uf121') $(echo -e '\uf121') $(echo -e '\uf121') $(echo -e '\uf121') $(echo -e '\uf121')
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
-bspc rule -a Steam follow=no
+bspc rule -a Steam follow=off floating=on
 
 ~/.config/bspwm/panel/panel &

@@ -73,11 +73,23 @@ sudo pip2 install isort flake8
 sudo npm install -g jshint
 ```
 
-bspwm
------
+Desktop Environment
+-------------------
+
+Install `feh` to manage the desktop wallpaper and `xorg-xmodmap` to modify
+keymaps in Xorg.
 
 ```
-sudo pacman -S bspwm lightdm acpi wireless_tools xorg-xmodmap
+sudo pacman -S feh xorg-xmodmap
+```
+
+### bspwm
+
+bspwm is a tiling window manager that represents windows as the leaves of a
+full binary tree.
+
+```
+sudo pacman -S bspwm
 ```
 
 ```
@@ -91,9 +103,49 @@ Type=Application
 EOF
 ```
 
-sxhkd
------
+### URxvt
+
+rxvt-unicode is a highly customizable terminal emulator forked from rxvt.
 
 ```
-sudo pacman -S sxhkd dmenu rxvt-unicode i3lock xorg-xbacklight
+sudo pacman -S rxvt-unicode
 ```
+
+#### Terminal font
+
+The font for the URxvt terminal is set throgh the `.Xresources` font
+configuration parameter.
+
+Install the `Dejavu` font family:
+
+```
+sudo pacman -S ttf-dejavu
+```
+
+### sxhkd
+
+sxhkd is a simple X hotkey daemon with a powerful and compact configuration
+syntax.
+
+`dmenu`, `i3lock`, and `xorg-xbacklight` are required for some of the
+keybindings.
+
+```
+sudo pacman -S sxhkd dmenu i3lock xorg-xbacklight
+```
+
+### lemonbar
+
+lemonbar is a lightweight bar entirely based on XCB. Install the [lemonbar
+package](https://aur.archlinux.org/packages/lemonbar-xft-git/) with xft support
+from the AUR.
+
+The lemonbar panel scripts require a few dditional packages:
+
+```
+sudo pacman -S acpi wireless_tools
+```
+
+The following fonts are also required by the panel scripts:
+* [Powerline fonts](https://aur.archlinux.org/packages/powerline-fonts-git/)
+* [FontAwesome](https://aur.archlinux.org/packages/ttf-font-awesome/)

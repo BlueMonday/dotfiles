@@ -1,37 +1,43 @@
-#!/bin/sh
+#!/bin/bash
 
 PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=24
+PANEL_HEIGHT=30
+UNDERLINE_HEIGHT=2
 
-CLK_ICON=$(echo -e '\ue017')
-BATT_ICON=$(echo -e '\ue037')
-VOL_ICON=$(echo -e '\ue05d')
-WIFI_ICON=$(echo -e '\ue0f0')
+PANEL_FONT_FAMILY="Source Code Pro for Powerline:size=12"
+ICON_FONT="FontAwesome:size=14"
 
-clock() {
-    DATE=$(date "+%d/%m/%y ${CLK_ICON} %H:%M")
-    echo "C${DATE}"
+datetime() {
+    local clk_icon=$(echo -e '\uf017')
+    local calendar_icon=$(echo -e '\uf073')
+    local formatted_date=$(date +"%a %b %d")
+    local formatted_time=$(date +"%l:%M %p")
+
+    echo "D$calendar_icon $formatted_date $clk_icon $formatted_time"
 }
 
 battery() {
-    BAT1=$(acpi --battery | awk -F, '{print $2}' | head -1)
-    BAT2=$(acpi --battery | awk -F, '{print $2}' | tail -1)
-    echo  "B${BATT_ICON}${BAT1} ${BATT_ICON}${BAT2}"
+    local batt_icon=$(echo -e '\uf240')
+    local bat1=$(acpi --battery | awk -F, '{print $2}' | head -1)
+    local bat2=$(acpi --battery | awk -F, '{print $2}' | tail -1)
+    echo  "B${batt_icon}${bat1} ${batt_icon}${bat2}"
 }
 
 volume() {
-    VOL=$(amixer -c 0 sget Master | awk '$0~/%/{print $4}' | tr -d '[]%')
-    echo "V${VOL_ICON} ${VOL}"
+    local vol_icon=$(echo -e '\uf028')
+    local vol=$(amixer -c 0 sget Master | awk '$0~/%/{print $4}' | tr -d '[]%')
+    echo "V${vol_icon} ${vol}"
 }
 
 wifi_ssid() {
+    local wifi_icon=$(echo -e '\uf1eb')
+    local essid=null
+
     if [[ -n $(iwgetid -r) ]]; then
-        ESSID=$(iwgetid -r)
-    else
-        ESSID="null"
+        essid=$(iwgetid -r)
     fi
 
-    echo "S${WIFI_ICON} ${ESSID}"
+    echo "S${wifi_icon} ${essid}"
 }
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
@@ -44,14 +50,14 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
-bspc config top_padding $PANEL_HEIGHT
+bspc config top_padding "$PANEL_HEIGHT"
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 
 while :
 do
     (
-        echo $(clock)
+        echo $(datetime)
         echo $(battery)
         echo $(volume)
         echo $(wifi_ssid)
@@ -64,9 +70,10 @@ done &
 cat "$PANEL_FIFO" | \
     ~/.config/bspwm/panel/panel_bar | \
     lemonbar \
-    -g x$PANEL_HEIGHT \
-    -f "-misc-stlarch-medium-r-normal-*-10-100-75-75-c-80-iso10646-1" \
-    -f "-*-terminus-medium-r-normal-*-14-*-*-*-c-*-*-1" \
+    -g x"$PANEL_HEIGHT" \
+    -f "$PANEL_FONT_FAMILY" \
+    -f "$ICON_FONT" \
+    -u "$UNDERLINE_HEIGHT" \
     -F "$COLOR_FOREGROUND" \
     -B "$COLOR_BACKGROUND" &
 

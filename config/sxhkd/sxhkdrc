@@ -84,7 +84,7 @@ alt + Return
 	urxvt
 
 alt + r
-    dmenu_run -fn "-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*"
+    dmenu_run -fn "Source Code Pro for Powerline:size=12"
 
 alt + x
     i3lock -c 000000
