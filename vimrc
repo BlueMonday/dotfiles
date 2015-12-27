@@ -25,6 +25,7 @@ Plug 'jtratner/vim-flavored-markdown'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+Plug 'heavenshell/vim-pydocstring'
 call plug#end()
 
 set t_Co=256
