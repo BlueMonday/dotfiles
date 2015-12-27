@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
@@ -23,6 +23,8 @@ Plug 'rking/ag.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'jtratner/vim-flavored-markdown'
 Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 set t_Co=256
@@ -37,7 +39,7 @@ set rnu
 
 set cursorline
 
-set wildignore=*.o,*.pyc
+set wildignore=*.o,*.so,*.pyc,*.zip
 set noswapfile
 set undodir=~/.vim/undo
 set hidden
@@ -60,37 +62,44 @@ nnoremap <C-l> <C-w>l
 
 set completeopt-=preview
 
-" Remove ex mode mapping. I have not once purposefully entered ex mode...
+" Remove ex mode mapping. I always end up entering ex mode by
+" accident *table flip*.
 nnoremap Q <Nop>
 
 " repeated visual indentation
 vnoremap > >gv
 vnoremap < <gv
 
-if exists('+colorcolumn')
-    augroup pep8colorcolumn
-        autocmd FileType python set colorcolumn=80
-    augroup END
-endif
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <leader>p :CtrlPTag<CR>
 
-augroup whitespace
+augroup colour_column
+    autocmd FileType python set colorcolumn=80
+augroup END
+
+augroup strip_whitespace
     autocmd BufWritePre * StripWhitespace
 augroup END
 
+augroup show_tabs
+    autocmd FileType python,html,css,javascript set list listchars=tab:▸\
+augroup END
+
 augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+    autocmd!
+    autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-augroup indentation
-    autocmd FileType javascript,json,yaml,html,css setlocal ts=2 sts=2 sw=2 expandtab
+augroup filetype_indentation
+    autocmd FileType javascript,html,css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType json,yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
-augroup rainbowparentheses
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
+augroup rainbow_parentheses
+    autocmd VimEnter * RainbowParenthesesToggle
+    autocmd Syntax * RainbowParenthesesLoadRound
+    autocmd Syntax * RainbowParenthesesLoadSquare
+    autocmd Syntax * RainbowParenthesesLoadBraces
 augroup END
 
 " Airline
@@ -115,3 +124,7 @@ let g:syntastic_style_warning_symbol='!'
 
 " indentLine
 let g:indentLine_faster=1
+
+" Gutentags
+let g:gutentags_exclude=['venv', 'build', 'static', 'node_modules']
+let g:gutentags_cache_dir='~/.vim/tags'

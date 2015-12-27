@@ -16,10 +16,11 @@ dotfiles --sync -C .dotfilesrc
 neovim
 ------
 
-Install `neovim`, `xclip` (clipboard support), and the python 2/3 neovim python modules.
+Install `neovim`, `xclip` (clipboard support), `ctags`, and the python 2/3
+neovim python modules.
 
 ```
-sudo pacman -S neovim xclip
+sudo pacman -S neovim xclip ctags
 sudo pip install neovim
 sudo pip2 install neovim
 ```
@@ -32,10 +33,11 @@ ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 ```
 
-Create undo directory.
+Create undo and tags directories.
 
 ```
 mkdir -p ~/.vim/undo
+mkdir -p ~/.vim/tags
 ```
 
 ### Plugins
@@ -93,7 +95,7 @@ sudo pacman -S bspwm
 ```
 
 ```
-cat << EOF /usr/share/xsessions/bspwm.desktop
+cat << EOF > /usr/share/xsessions/bspwm.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Name=bspwm
