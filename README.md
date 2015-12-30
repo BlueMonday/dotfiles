@@ -1,20 +1,25 @@
 dotfiles
 ========
 
-Install `dotfiles` python tool.
+Install [GNU Stow](https://www.gnu.org/software/stow/).
 
 ```
-sudo pip install dotfiles
+sudo pacman -S stow
 ```
 
-Sync dotfiles!
+Each directory is a Stow "package" (a related collection of files and
+directories administered as a unit). Stow's default action is to create
+symbolic links from the target tree to the package tree. The default target
+tree is the parent of the current directory.
+
+Use Stow to install one or more packages:
 
 ```
-dotfiles --sync -C .dotfilesrc
+stow bspwm vim X zsh
 ```
 
-neovim
-------
+vim/neovim
+----------
 
 Install `neovim`, `xclip` (clipboard support), `ctags`, and the python 2/3
 neovim python modules.
@@ -75,15 +80,8 @@ sudo pip2 install isort flake8
 sudo npm install -g jshint
 ```
 
-Desktop Environment
--------------------
-
-Install `feh` to manage the desktop wallpaper and `xorg-xmodmap` to modify
-keymaps in Xorg.
-
-```
-sudo pacman -S feh xorg-xmodmap
-```
+Window Manager
+--------------
 
 ### bspwm
 
@@ -105,9 +103,34 @@ Type=Application
 EOF
 ```
 
-### URxvt
+### sxhkd
 
-rxvt-unicode is a highly customizable terminal emulator forked from rxvt.
+sxhkd is a simple X hotkey daemon with a powerful and compact configuration
+syntax.
+
+`dmenu`, `i3lock`, and `xorg-xbacklight` are required for some of the
+keybindings.
+
+```
+sudo pacman -S sxhkd dmenu i3lock xorg-xbacklight
+```
+
+Wallpaper
+---------
+
+Install `feh` to manage the desktop wallpaper and `xorg-xmodmap` to modify
+keymaps in Xorg.
+
+```
+sudo pacman -S feh xorg-xmodmap
+```
+
+
+URxvt
+-----
+
+rxvt-unicode (commonly known as URxvt) is a highly customizable terminal
+emulator forked from rxvt.
 
 ```
 sudo pacman -S rxvt-unicode
@@ -123,31 +146,3 @@ Install the `Dejavu` font family:
 ```
 sudo pacman -S ttf-dejavu
 ```
-
-### sxhkd
-
-sxhkd is a simple X hotkey daemon with a powerful and compact configuration
-syntax.
-
-`dmenu`, `i3lock`, and `xorg-xbacklight` are required for some of the
-keybindings.
-
-```
-sudo pacman -S sxhkd dmenu i3lock xorg-xbacklight
-```
-
-### lemonbar
-
-lemonbar is a lightweight bar entirely based on XCB. Install the [lemonbar
-package](https://aur.archlinux.org/packages/lemonbar-xft-git/) with xft support
-from the AUR.
-
-The lemonbar panel scripts require a few dditional packages:
-
-```
-sudo pacman -S acpi wireless_tools
-```
-
-The following fonts are also required by the panel scripts:
-* [Powerline fonts](https://aur.archlinux.org/packages/powerline-fonts-git/)
-* [FontAwesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
