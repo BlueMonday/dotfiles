@@ -10,7 +10,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Yggdroot/indentLine'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ntpeters/vim-better-whitespace'
@@ -18,14 +18,14 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
-Plug 'fisadev/vim-isort'
+Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'rking/ag.vim'
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'jtratner/vim-flavored-markdown'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
-Plug 'heavenshell/vim-pydocstring'
+Plug 'heavenshell/vim-pydocstring', { 'for': 'python' }
 call plug#end()
 
 set t_Co=256
@@ -56,12 +56,14 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 
+set completeopt-=preview
+
+nmap <silent> <leader>d <Plug>(pydocstring)
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-set completeopt-=preview
 
 " Remove ex mode mapping. I always end up entering ex mode by
 " accident *table flip*.
