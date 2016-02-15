@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
@@ -105,6 +106,9 @@ augroup rainbow_parentheses
     autocmd Syntax * RainbowParenthesesLoadBraces
 augroup END
 
+" ctrlp
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
@@ -129,5 +133,5 @@ let g:syntastic_style_warning_symbol='!'
 let g:indentLine_faster=1
 
 " Gutentags
-let g:gutentags_exclude=['venv', 'build', 'static', 'node_modules']
+let g:gutentags_exclude=['venv', 'node_modules']
 let g:gutentags_cache_dir='~/.vim/tags'
