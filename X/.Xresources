@@ -2,22 +2,28 @@
 
 URxvt.intensityStyles: false
 
-URxvt.perl-ext-common: default,clipboard,matcher
+URxvt.perl-ext-common: default,clipboard,matcher,resize-font
 
 ! matcher
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/chromium
 URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
 
 ! clipboard
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
+! resize-font
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
 URxvt.scrollBar: false
 URxvt.font: xft:Dejavu\ Sans\ Mono\ for\ Powerline:pixelsize=18
 URxvt.boldFont: xft:Dejavu\ Sans\ Mono\ for\ Powerline:style=Bold:pixelsize=18
 URxvt.cursorBlink: true
 URxvt.loginShell: true
+
 !URxvt.transparent: true
 !URxvt.shading: 20
 
