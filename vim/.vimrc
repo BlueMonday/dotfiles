@@ -27,6 +27,7 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'heavenshell/vim-pydocstring', { 'for': 'python' }
+Plug 'ap/vim-css-color'
 call plug#end()
 
 set t_Co=256
