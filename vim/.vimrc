@@ -132,6 +132,7 @@ let g:syntastic_style_warning_symbol='!'
 
 " indentLine
 let g:indentLine_faster=1
+let g:indentLine_noConcealCursor=""
 
 " Gutentags
 let g:gutentags_exclude=['venv', 'node_modules']
