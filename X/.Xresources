@@ -18,6 +18,7 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 
+URxvt.saveLines: 10000
 URxvt.scrollBar: false
 URxvt.font: xft:Dejavu\ Sans\ Mono\ for\ Powerline:pixelsize=18
 URxvt.boldFont: xft:Dejavu\ Sans\ Mono\ for\ Powerline:style=Bold:pixelsize=18
