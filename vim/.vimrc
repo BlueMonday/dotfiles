@@ -37,7 +37,7 @@ colorscheme Tomorrow-Night-Eighties
 set background=dark
 
 set shell=zsh
-let mapleader=","
+let mapleader="\<Space>"
 
 set nu
 set rnu

@@ -76,7 +76,7 @@ sudo pacman -S the_silver_searcher
 Install python and javascript libraries required by plugins.
 
 ```bash
-sudo pip2 install isort flake8
+sudo pip2 install isort flake8 pylint
 sudo npm install -g jshint
 ```
 
