@@ -30,6 +30,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'heavenshell/vim-pydocstring', { 'for': 'python' }
 Plug 'ap/vim-css-color'
+Plug 'saltstack/salt-vim'
 call plug#end()
 
 set t_Co=256
