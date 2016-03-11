@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'tpope/vim-fugitive'
@@ -118,6 +119,7 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
+let g:airline_theme='tomorrow'
 
 " gitgutter
 let g:gitgutter_sign_added='✚'
