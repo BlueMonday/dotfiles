@@ -11,7 +11,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Yggdroot/indentLine'
@@ -81,6 +81,8 @@ vnoremap < <gv
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <leader>p :CtrlPTag<CR>
 
+nnoremap <F12> :Neomake<CR>
+
 augroup colour_column
     autocmd FileType python set colorcolumn=80
 augroup END
@@ -123,15 +125,6 @@ let g:gitgutter_sign_modified='●'
 let g:gitgutter_sign_removed='✘_'
 let g:gitgutter_sign_modified_removed='●✘'
 let g:gitgutter_sign_removed_first_line='✘‾'
-
-" Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_aggregate_errors=1
-let g:syntastic_javascript_checkers=['jshint']
-let g:syntastic_error_symbol='➔'
-let g:syntastic_style_error_symbol='➔'
-let g:syntastic_warning_symbol='!'
-let g:syntastic_style_warning_symbol='!'
 
 " indentLine
 let g:indentLine_faster=1
