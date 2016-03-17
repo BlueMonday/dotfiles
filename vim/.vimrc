@@ -102,7 +102,7 @@ augroup markdown
 augroup END
 
 augroup filetype_indentation
-    autocmd FileType javascript,html,css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType ruby,javascript,html,css setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType json,yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
