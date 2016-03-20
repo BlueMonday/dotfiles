@@ -107,11 +107,11 @@ sxhkd is a simple X hotkey daemon with a powerful and compact configuration
 syntax. sxhkd is used to communicate with bspwm through bspc as well as launch
 your applications of choice.
 
-`dmenu`, `i3lock`, and `xorg-xbacklight` are required for some of the
-keybindings.
+[rofi](https://www.archlinux.org/packages/community/x86_64/rofi/), `i3lock`,
+and `xorg-xbacklight` are required for some of the keybindings.
 
 ```bash
-sudo pacman -S sxhkd dmenu i3lock xorg-xbacklight
+sudo pacman -S sxhkd i3lock xorg-xbacklight
 ```
 
 Wallpaper
@@ -122,6 +122,13 @@ Install `feh` to manage the desktop wallpaper:
 ```bash
 sudo pacman -S feh
 ```
+
+GTK
+---
+
+Install the [arc gtk theme](https://aur.archlinux.org/packages/gtk-theme-arc/)
+and the [numix circle icon
+theme](https://aur.archlinux.org/packages/numix-circle-icon-theme-git/).
 
 xmodmap
 -------

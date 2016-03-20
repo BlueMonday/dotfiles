@@ -84,7 +84,7 @@ super + Return
 	urxvt
 
 super + r
-    dmenu_run -fn "Source Code Pro for Powerline:size=12"
+    rofi -show run -font "Dejavu Sans Mono for Powerline 18" -lines 10
 
 super + x
     i3lock -c 000000
