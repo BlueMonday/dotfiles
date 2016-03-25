@@ -5,7 +5,7 @@ URxvt.intensityStyles: false
 URxvt.perl-ext-common: default,clipboard,matcher,resize-font
 
 ! matcher
-URxvt.url-launcher: /usr/bin/chromium
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
 

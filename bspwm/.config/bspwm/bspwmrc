@@ -8,7 +8,7 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
-bspc monitor -d $(echo -e '\uf268') $(echo -e '\uf121') $(echo -e '\uf120') $(echo -e '\uf07c') $(echo -e '\uf0c2')
+bspc monitor -d $(echo -e '\uf269') $(echo -e '\uf121') $(echo -e '\uf120') $(echo -e '\uf07c') $(echo -e '\uf0c2')
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
 bspc rule -a Steam follow=off floating=on
