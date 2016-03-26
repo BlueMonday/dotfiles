@@ -140,14 +140,14 @@ Install the [arc gtk theme](https://aur.archlinux.org/packages/gtk-theme-arc/)
 and the [numix circle icon
 theme](https://aur.archlinux.org/packages/numix-circle-icon-theme-git/).
 
-xmodmap
--------
+setxkbmap
+---------
 
-[xmodmap](http://www.x.org/archive/X11R6.8.2/doc/xmodmap.1.html) is a utility
-for modifying keymaps and pointer button mappings in Xorg.
+[setxkbmap](http://www.x.org/archive/X11R7.7/doc/man/man1/setxkbmap.1.xhtml) is
+a utility for setting the keyboard using the X Keyboard Extension (XKB).
 
 ```bash
-sudo pacman -S xorg-xmodmap
+sudo pacman -S xorg-setxkbmap
 ```
 
 URxvt
