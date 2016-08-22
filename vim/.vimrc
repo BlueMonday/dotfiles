@@ -14,7 +14,10 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-vinegar'
 Plug 'benekastah/neomake'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Yggdroot/indentLine'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -136,3 +139,8 @@ let g:indentLine_noConcealCursor=""
 " Gutentags
 let g:gutentags_exclude=['venv', 'node_modules']
 let g:gutentags_cache_dir='~/.vim/tags'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
