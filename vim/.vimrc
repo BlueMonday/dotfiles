@@ -36,6 +36,7 @@ Plug 'majutsushi/tagbar'
 Plug 'heavenshell/vim-pydocstring', { 'for': 'python' }
 Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'saltstack/salt-vim'
+Plug 'mbbill/undotree'
 call plug#end()
 
 set t_Co=256
