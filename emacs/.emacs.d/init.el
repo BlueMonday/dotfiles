@@ -37,11 +37,18 @@
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(global-hl-line-mode 1)
+(global-linum-mode t)
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
 
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right))
 
 ;; https://github.com/sellout/emacs-color-theme-solarized/pull/187
 (setq color-themes '())
@@ -50,12 +57,10 @@
   :config
   (load-theme 'solarized-dark t))
 
-(use-package nlinum-relative
+(use-package linum-relative
   :ensure t
   :config
-  (nlinum-relative-setup-evil)
-  (setq nlinum-relative-redisplay-delay 0)
-  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
+  (linum-relative-toggle))
 
 (use-package helm
   :ensure t
@@ -117,6 +122,24 @@
   :ensure t
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+(use-package evil-commentary
+  :ensure t
+  :config
+  (evil-commentary-mode))
+
+(use-package git-gutter
+  :ensure t
+  :config
+  (global-git-gutter-mode t)
+  (git-gutter:linum-setup)
+  (setq  git-gutter:hide-gutter t
+         git-gutter:modified-sign "!"))
+
+(use-package vi-tilde-fringe
+  :ensure t
+  :config
+  (global-vi-tilde-fringe-mode))
 
 (provide 'init)
 ;;; init.el ends here
