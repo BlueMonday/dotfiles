@@ -2,9 +2,7 @@
 ;-*-Emacs-Lisp-*-
 
 ;;; Commentary:
-;;
-;; Lorem Ipsum.
-;;
+
 ;;; Code:
 
 (require 'package)
@@ -60,12 +58,49 @@
   (add-hook 'prog-mode-hook 'nlinum-relative-mode))
 
 (use-package helm
+  :ensure t
+  :config
+  (helm-mode 1)
+  (setq helm-autoresize-mode t))
+
+(use-package helm-projectile
+  :bind (("C-S-P" . helm-projectile-switch-project)
+         :map evil-normal-state-map
+         ("C-p" . helm-projectile))
   :ensure t)
 
 (use-package powerline
   :ensure t
   :config
   (powerline-default-theme))
+
+;; https://github.com/company-mode/company-mode/issues/180
+(defun on-off-fci-before-company(command)
+  (when (string= "show" command)
+    (turn-off-fci-mode))
+  (when (string= "hide" command)
+    (turn-on-fci-mode)))
+
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode)
+  (setq company-idle-delay 0.2)
+  (setq company-selection-wrap-around t)
+  (define-key company-active-map [tab] 'company-complete-common-or-cycle)
+  (advice-add 'company-call-frontends :before #'on-off-fci-before-company))
+
+(use-package company-quickhelp
+  :ensure t
+  :config
+  (company-quickhelp-mode 1))
+
+(use-package company-jedi
+    :ensure t
+    :init
+    (setq company-jedi-python-bin "python3")
+    :config
+    (add-to-list 'company-backends 'company-jedi))
 
 (use-package flycheck
   :ensure t
@@ -77,6 +112,11 @@
   (setq fci-rule-column 80)
   (setq fci-rule-width 1)
   (add-hook 'python-mode-hook 'fci-mode))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (provide 'init)
 ;;; init.el ends here
