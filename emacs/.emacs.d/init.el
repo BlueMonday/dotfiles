@@ -102,10 +102,19 @@
 
 (use-package company-jedi
     :ensure t
-    :init
-    (setq company-jedi-python-bin "python3")
     :config
     (add-to-list 'company-backends 'company-jedi))
+
+(use-package company-go
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-go))
+
+(use-package go-mode
+  :ensure t
+  :config
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook #'gofmt-before-save))
 
 (use-package flycheck
   :ensure t
@@ -140,6 +149,9 @@
   :ensure t
   :config
   (global-vi-tilde-fringe-mode))
+
+(use-package dockerfile-mode
+  :ensure t)
 
 (provide 'init)
 ;;; init.el ends here
