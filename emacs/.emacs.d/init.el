@@ -75,6 +75,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (load-theme 'dracula t))
 
+(use-package diminish
+  :ensure t)
+
 (use-package linum-relative
   :ensure t
   :config
@@ -83,6 +86,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package helm
   :ensure t
+  :diminish helm-mode
   :config
   (helm-mode 1)
   (setq helm-autoresize-mode t))
@@ -107,6 +111,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package company
   :ensure t
+  :diminish company-mode
   :config
   (global-company-mode)
   (setq company-idle-delay 0.2)
@@ -171,6 +176,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package dockerfile-mode
   :ensure t)
+
+(use-package undo-tree
+  :ensure t
+  :diminish undo-tree-mode
+  :config
+  (setq undo-tree-auto-save-history t)
+  (setq undo-tree-history-directory-alist
+        (list (cons "." (expand-file-name "undo-tree-history" user-emacs-directory)))))
 
 (provide 'init)
 ;;; init.el ends here
