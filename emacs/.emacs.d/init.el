@@ -41,8 +41,6 @@
 (global-linum-mode t)
 (setq vc-follow-symlinks t)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
 (use-package evil
   :ensure t
@@ -79,7 +77,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (use-package linum-relative
   :ensure t
   :config
-  (linum-relative-toggle))
+  (linum-relative-toggle)
+  (setq linum-relative-current-symbol ""))
 
 (use-package helm
   :ensure t
