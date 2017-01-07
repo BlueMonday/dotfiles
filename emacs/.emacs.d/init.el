@@ -40,6 +40,7 @@
 (global-hl-line-mode 1)
 (global-linum-mode t)
 (setq vc-follow-symlinks t)
+(define-key global-map (kbd "RET") 'newline-and-indent)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
 
 (use-package evil
