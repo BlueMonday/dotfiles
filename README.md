@@ -23,8 +23,8 @@ stow bspwm gtk vim X zsh
 vim/neovim
 ----------
 
-Install [neovim](https://neovim.io/), `xclip` (clipboard support), `ctags`, and the Python 2/3
-neovim Python modules.
+Install [neovim](https://neovim.io/), `xclip` (clipboard support),
+`ctags`, and the Python 2/3 neovim Python modules.
 
 ```bash
 sudo pacman -S neovim xclip ctags
@@ -173,4 +173,3 @@ Install the `Dejavu` font family:
 ```bash
 sudo pacman -S ttf-dejavu
 ```
-

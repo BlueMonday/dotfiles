@@ -40,8 +40,16 @@
 (global-hl-line-mode 1)
 (global-linum-mode t)
 (setq vc-follow-symlinks t)
+(defalias 'yes-or-no-p 'y-or-n-p)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
+
+;; Disable Messages buffer on startup
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+
+;; Disable startup message in scratch buffer
+(setq-default initial-scratch-message nil)
 
 (use-package evil
   :ensure t
@@ -51,6 +59,9 @@
   (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
   (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+  ;; vim-unimpaired like bindings
+  (define-key evil-normal-state-map (kbd "[ b") 'previous-buffer)
+  (define-key evil-normal-state-map (kbd "] b") 'next-buffer)
   ;; esc quits
   (defun minibuffer-keyboard-quit ()
     "Abort recursive edit.
@@ -184,6 +195,22 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq undo-tree-auto-save-history t)
   (setq undo-tree-history-directory-alist
         (list (cons "." (expand-file-name "undo-tree-history" user-emacs-directory)))))
+
+(use-package mode-icons
+  :ensure t
+  :config
+  (mode-icons-mode))
+
+(use-package which-key
+  :ensure t
+  :diminish which-key-mode
+  :config
+  (which-key-mode t))
+
+(use-package markdown-mode
+  :ensure t
+  :config
+  (add-hook 'markdown-mode-hook 'flyspell-mode))
 
 (provide 'init)
 ;;; init.el ends here
