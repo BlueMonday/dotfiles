@@ -44,6 +44,10 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
 
+;; start maximized
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 ;; Smoother scrolling
 (setq
   scroll-margin 5
@@ -166,7 +170,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (setq fci-rule-column 80)
   (setq fci-rule-width 1)
-  (add-hook 'python-mode-hook 'fci-mode))
+  (add-hook 'python-mode-hook fci-mode))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -180,6 +184,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package git-gutter
   :ensure t
+  :diminish git-gutter-mode
   :config
   (global-git-gutter-mode t)
   (git-gutter:linum-setup)
@@ -217,6 +222,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :config
   (add-hook 'markdown-mode-hook 'flyspell-mode))
+
+(use-package ag
+  :ensure t
+  :config
+  (setq ag-highlight-search t)
+  (setq ag-reuse-buffers t)
+  (setq ag-reuse-window t))
 
 (provide 'init)
 ;;; init.el ends here
