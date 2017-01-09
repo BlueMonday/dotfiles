@@ -44,6 +44,12 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
 
+;; Smoother scrolling
+(setq
+  scroll-margin 5
+  scroll-step 1
+  scroll-preserve-screen-position 1)
+
 ;; Disable Messages buffer on startup
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
