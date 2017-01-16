@@ -43,6 +43,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
+(setq auto-save-file-name-transforms `(("." "~/.emacs.d/backups/" t)))
 
 ;; start maximized
 (custom-set-variables
@@ -91,6 +92,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
   (global-set-key [escape] 'evil-exit-emacs-state))
 
+(use-package evil-numbers
+  :ensure t
+  :config
+  (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
+
 (use-package dracula-theme
   :ensure t
   :config
@@ -105,18 +112,24 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (linum-relative-toggle)
   (setq linum-relative-current-symbol ""))
 
-(use-package helm
+(use-package projectile
   :ensure t
-  :diminish helm-mode
   :config
-  (helm-mode 1)
-  (setq helm-autoresize-mode t))
+  (projectile-mode 1))
 
-(use-package helm-projectile
-  :bind (("C-S-P" . helm-projectile-switch-project)
-         :map evil-normal-state-map
-         ("C-p" . helm-projectile))
-  :ensure t)
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :config
+  (ivy-mode 1)
+  (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+  (setq ivy-use-virtual-buffers t))
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on)
+  (define-key evil-normal-state-map (kbd "C-p") 'counsel-projectile-find-file))
 
 (use-package powerline
   :ensure t
@@ -163,6 +176,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package flycheck
   :ensure t
+  :diminish flycheck-mode
   :init (global-flycheck-mode))
 
 (use-package fill-column-indicator
