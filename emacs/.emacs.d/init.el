@@ -90,7 +90,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-  (global-set-key [escape] 'evil-exit-emacs-state))
+  (global-set-key [escape] 'evil-exit-emacs-state)
+  (evil-set-initial-state 'term-mode 'emacs))
 
 (use-package evil-numbers
   :ensure t
