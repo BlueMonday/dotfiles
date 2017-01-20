@@ -42,8 +42,8 @@
 (setq vc-follow-symlinks t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (define-key global-map (kbd "RET") 'newline-and-indent)
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms `(("." "~/.emacs.d/backups/" t)))
+(setq backup-directory-alist `((".*" . "~/.emacs.d/backups/")))
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)))
 
 ;; start maximized
 (custom-set-variables
@@ -244,6 +244,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq ag-highlight-search t)
   (setq ag-reuse-buffers t)
   (setq ag-reuse-window t))
+
+(use-package groovy-mode
+  :ensure t
+  :mode (("\\.groovy\\'" . groovy-mode)
+         ("Jenkinsfile\\'" . groovy-mode)))
 
 (provide 'init)
 ;;; init.el ends here
