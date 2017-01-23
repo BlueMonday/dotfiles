@@ -62,7 +62,9 @@
 (setq-default initial-scratch-message nil)
 
 (use-package diminish
-  :ensure t)
+  :ensure t
+  :config
+  (diminish 'abbrev-mode))
 
 (use-package dracula-theme
   :ensure t
