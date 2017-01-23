@@ -36,6 +36,7 @@
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default fill-column 80)
 (global-hl-line-mode 1)
 (global-linum-mode t)
 (setq vc-follow-symlinks t)
