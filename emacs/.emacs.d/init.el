@@ -25,7 +25,6 @@
 (eval-when-compile
   (require 'use-package))
 
-;; Essentials
 (setq inhibit-splash-screen t
       inhibit-startup-message t
       inhibit-startup-echo-area-message t)
@@ -45,7 +44,7 @@
 (setq backup-directory-alist `((".*" . "~/.emacs.d/backups/")))
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)))
 
-;; start maximized
+;; Start maximized
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
@@ -62,10 +61,48 @@
 ;; Disable startup message in scratch buffer
 (setq-default initial-scratch-message nil)
 
+(use-package diminish
+  :ensure t)
+
+(use-package dracula-theme
+  :ensure t
+  :config
+  (load-theme 'dracula t))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode 1))
+
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :config
+  (ivy-mode 1)
+  (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
+  (setq ivy-use-virtual-buffers t))
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on))
+
+(use-package evil-leader
+    :ensure t
+    :config
+    (global-evil-leader-mode)
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key
+     "b" 'switch-to-buffer
+     "e" 'counsel-find-file
+     "k" 'kill-buffer
+     "x" 'counsel-M-x))
+
 (use-package evil
   :ensure t
   :config
   (evil-mode 1)
+  (define-key evil-normal-state-map (kbd "C-p") 'counsel-projectile-find-file)
   (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
   (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
@@ -99,38 +136,16 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
 
-(use-package dracula-theme
+(use-package evil-commentary
   :ensure t
   :config
-  (load-theme 'dracula t))
-
-(use-package diminish
-  :ensure t)
+  (evil-commentary-mode))
 
 (use-package linum-relative
   :ensure t
   :config
   (linum-relative-toggle)
   (setq linum-relative-current-symbol ""))
-
-(use-package projectile
-  :ensure t
-  :config
-  (projectile-mode 1))
-
-(use-package ivy
-  :ensure t
-  :diminish ivy-mode
-  :config
-  (ivy-mode 1)
-  (define-key ivy-minibuffer-map (kbd "<escape>") 'minibuffer-keyboard-quit)
-  (setq ivy-use-virtual-buffers t))
-
-(use-package counsel-projectile
-  :ensure t
-  :config
-  (counsel-projectile-on)
-  (define-key evil-normal-state-map (kbd "C-p") 'counsel-projectile-find-file))
 
 (use-package powerline
   :ensure t
@@ -192,11 +207,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-(use-package evil-commentary
-  :ensure t
-  :config
-  (evil-commentary-mode))
-
 (use-package git-gutter
   :ensure t
   :diminish git-gutter-mode
@@ -249,6 +259,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :mode (("\\.groovy\\'" . groovy-mode)
          ("Jenkinsfile\\'" . groovy-mode)))
+
+(use-package org
+  :ensure t
+  :defer t)
+
+(use-package org-evil
+  :ensure t)
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (provide 'init)
 ;;; init.el ends here
