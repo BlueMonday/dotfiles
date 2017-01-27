@@ -155,13 +155,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (powerline-default-theme))
 
-;; https://github.com/company-mode/company-mode/issues/180
-(defun on-off-fci-before-company(command)
-  (when (string= "show" command)
-    (turn-off-fci-mode))
-  (when (string= "hide" command)
-    (turn-on-fci-mode)))
-
 (use-package company
   :ensure t
   :diminish company-mode
@@ -169,8 +162,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (global-company-mode)
   (setq company-idle-delay 0.2)
   (setq company-selection-wrap-around t)
-  (define-key company-active-map [tab] 'company-complete-common-or-cycle)
-  (advice-add 'company-call-frontends :before #'on-off-fci-before-company))
+  (define-key company-active-map [tab] 'company-complete-common-or-cycle))
 
 (use-package company-quickhelp
   :ensure t
@@ -204,6 +196,20 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq fci-rule-column 80)
   (setq fci-rule-width 1)
   (add-hook 'python-mode-hook fci-mode))
+
+; https://github.com/alpaker/Fill-Column-Indicator/issues/21
+(defvar fci-mode-suppressed nil)
+(defadvice popup-create (before suppress-fci-mode activate)
+  "Suspend fci-mode while popups are visible."
+  (set (make-local-variable 'fci-mode-suppressed) fci-mode)
+  (when fci-mode
+    (turn-off-fci-mode)))
+
+(defadvice popup-delete (after restore-fci-mode activate)
+  "Restore fci-mode when all popups have closed."
+  (when (and (not popup-instances) fci-mode-suppressed)
+    (setq fci-mode-suppressed nil)
+    (turn-on-fci-mode)))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -274,6 +280,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package python-docstring
+  :ensure t
+  :config)
+
+(use-package py-isort
+  :ensure t
+  :config)
 
 (provide 'init)
 ;;; init.el ends here
