@@ -41,9 +41,12 @@
 (global-linum-mode t)
 (setq vc-follow-symlinks t)
 (defalias 'yes-or-no-p 'y-or-n-p)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (setq backup-directory-alist `((".*" . "~/.emacs.d/backups/")))
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)))
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; Start maximized
 (custom-set-variables
@@ -74,6 +77,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :config
   (projectile-mode 1))
 
@@ -269,10 +273,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :mode (("\\.groovy\\'" . groovy-mode)
          ("Jenkinsfile\\'" . groovy-mode)))
 
-(use-package org
-  :ensure t
-  :defer t)
-
 (use-package org-evil
   :ensure t)
 
@@ -282,12 +282,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package python-docstring
-  :ensure t
-  :config)
+  :ensure t)
 
 (use-package py-isort
+  :ensure t)
+
+(use-package yaml-mode
   :ensure t
-  :config)
+  :mode ("\\.yml\\'" . yaml-mode))
+
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html?\\'" . web-mode))
 
 (provide 'init)
 ;;; init.el ends here
