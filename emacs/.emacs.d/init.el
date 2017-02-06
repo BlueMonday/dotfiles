@@ -303,5 +303,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
    TeX-parse-self t
    TeX-PDF-mode t))
 
+(use-package latex-preview-pane
+  :ensure t)
+
 (provide 'init)
 ;;; init.el ends here
