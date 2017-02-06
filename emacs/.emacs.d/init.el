@@ -295,5 +295,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :mode ("\\.html?\\'" . web-mode))
 
+(use-package tex
+  :ensure auctex
+  :config
+  (setq
+   TeX-auto-save t
+   TeX-parse-self t
+   TeX-PDF-mode t))
+
 (provide 'init)
 ;;; init.el ends here
