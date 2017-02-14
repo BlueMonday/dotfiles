@@ -36,7 +36,7 @@
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq-default fill-column 80)
+(setq-default fill-column 79)
 (global-hl-line-mode 1)
 (global-linum-mode t)
 (setq vc-follow-symlinks t)
@@ -300,6 +300,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (use-package web-mode
   :ensure t
   :mode ("\\.html?\\'" . web-mode))
+
+(use-package rainbow-mode
+  :ensure t
+  :config
+  (add-hook 'css-mode-hook 'rainbow-mode))
 
 (use-package tex
   :ensure auctex
