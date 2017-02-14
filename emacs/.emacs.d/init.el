@@ -94,16 +94,8 @@
   :config
   (counsel-projectile-on))
 
-(use-package evil-leader
-    :ensure t
-    :config
-    (global-evil-leader-mode)
-    (evil-leader/set-leader ",")
-    (evil-leader/set-key
-     "b" 'switch-to-buffer
-     "e" 'counsel-find-file
-     "k" 'kill-buffer
-     "x" 'counsel-M-x))
+(use-package magit
+  :ensure t)
 
 (use-package evil
   :ensure t
@@ -136,6 +128,20 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
   (global-set-key [escape] 'evil-exit-emacs-state)
   (evil-set-initial-state 'term-mode 'emacs))
+
+(use-package evil-leader
+    :ensure t
+    :config
+    (global-evil-leader-mode)
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key
+     "b" 'switch-to-buffer
+     "e" 'counsel-find-file
+     "k" 'kill-buffer
+     "x" 'counsel-M-x))
+
+(use-package evil-magit
+  :ensure t)
 
 (use-package evil-numbers
   :ensure t
