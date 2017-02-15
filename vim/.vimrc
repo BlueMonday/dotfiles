@@ -30,7 +30,7 @@ Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'rking/ag.vim'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'jtratner/vim-flavored-markdown'
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'dracula/vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'heavenshell/vim-pydocstring', { 'for': 'python' }
@@ -40,8 +40,7 @@ Plug 'mbbill/undotree'
 call plug#end()
 
 set t_Co=256
-colorscheme Tomorrow-Night-Eighties
-set background=dark
+colorscheme dracula
 
 set shell=zsh
 let mapleader="\<Space>"
