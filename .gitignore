@@ -2,3 +2,5 @@ emacs/.emacs.d/backups/
 emacs/.emacs.d/undo-tree-history/
 emacs/.emacs.d/elpa/
 emacs/.emacs.d/.python-environments/
+emacs/.emacs.d/projectile-bookmarks.eld
+emacs/.emacs.d/recentf

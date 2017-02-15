@@ -1,4 +1,4 @@
-#include ".Xresources.TomorrowNightEighties"
+#include ".Xresources.dracula"
 
 URxvt.intensityStyles: false
 
