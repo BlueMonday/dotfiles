@@ -6,7 +6,7 @@ super + Return
 	urxvt
 
 super + r
-    rofi -show run -font "Dejavu Sans Mono for Powerline 18" -lines 10
+    rofi -show run
 
 super + x
     i3lock -c 000000

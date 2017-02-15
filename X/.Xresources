@@ -1,5 +1,13 @@
 #include ".Xresources.dracula"
 
+! Rofi
+rofi.lines: 10
+rofi.color-window: #44475a, #f1fa8c, #f1fa8c
+rofi.color-normal: #44475a, #8BE9FD, #44475a, #44475a, #FF7AC6
+rofi.color-active: #f1fa8c, #44475a, #8BE9FD, #44475a, #FF7AC6
+rofi.color-urgent: #f1fa8c, #44475a, #8BE9FD, #44475a, #FF7AC6
+rofi.font: Dejavu Sans Mono for Powerline 18
+
 URxvt.intensityStyles: false
 
 URxvt.perl-ext-common: default,clipboard,matcher,resize-font
