@@ -4,8 +4,6 @@ xrdb -I$HOME ~/.Xresources
 
 xset +fp /usr/share/fonts/local
 xset fp rehash
-feh --bg-scale /usr/share/backgrounds/wallpaper.jpg
+feh --bg-scale ~/dotfiles/backgrounds/deer.png
 
 setxkbmap -option ctrl:nocaps
-
-sxhkd &
