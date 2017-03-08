@@ -119,6 +119,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+x exec i3lock -c 000000
 bindsym $mod+d exec rofi -show run
 
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

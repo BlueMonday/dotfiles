@@ -1,6 +1,8 @@
-# Emacs
+Emacs
+=====
 
-# Spelling
+Spelling
+--------
 
 The aspell package is required in order to check spelling:
 
