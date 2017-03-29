@@ -117,7 +117,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+x exec i3lock -c 000000
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5- unmute
