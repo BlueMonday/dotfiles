@@ -317,5 +317,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (use-package latex-preview-pane
   :ensure t)
 
+(use-package protobuf-mode
+  :ensure t)
+
 (provide 'init)
 ;;; init.el ends here
