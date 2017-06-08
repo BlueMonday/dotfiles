@@ -137,7 +137,7 @@ let g:indentLine_faster=1
 let g:indentLine_noConcealCursor=""
 
 " Gutentags
-let g:gutentags_exclude=['venv', 'node_modules']
+let g:gutentags_ctags_exclude=['venv', 'node_modules']
 let g:gutentags_cache_dir='~/.vim/tags'
 
 " deoplete
