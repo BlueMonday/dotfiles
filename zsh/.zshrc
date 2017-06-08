@@ -7,7 +7,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(docker docker-compose git golang pip ssh-agent vagrant)
+plugins=(docker docker-compose git golang pip ssh-agent vagrant kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
