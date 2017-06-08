@@ -4,3 +4,6 @@ emacs/.emacs.d/elpa/
 emacs/.emacs.d/.python-environments/
 emacs/.emacs.d/projectile-bookmarks.eld
 emacs/.emacs.d/recentf
+emacs/.emacs.d/.#recentf
+emacs/.emacs.d/auto-save-list/
+emacs/.config/systemd/user/default.target.wants

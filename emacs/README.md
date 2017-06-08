@@ -1,6 +1,14 @@
 Emacs
 =====
 
+Daemon
+------
+
+```bash
+systemctl --user enable emacs
+systemctl --user start emacs
+```
+
 Spelling
 --------
 
