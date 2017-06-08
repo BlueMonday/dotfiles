@@ -7,6 +7,3 @@ xset fp rehash
 feh --bg-scale ~/dotfiles/backgrounds/deer.png
 
 setxkbmap -option ctrl:nocaps
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin

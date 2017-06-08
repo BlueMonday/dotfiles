@@ -13,6 +13,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias -g vim='emacsclient -nw'
 
-export EDITOR='emacsclient -nw'
-
 zstyle :omz:plugins:ssh-agent agent-forwarding on
