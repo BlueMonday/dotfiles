@@ -7,5 +7,9 @@ ExecStart=/usr/bin/zsh -l -c '/usr/bin/emacs --daemon'
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
 Restart=always
 
+# Remove the limit in startup timeout, since emacs
+# cloning and building all packages can take time
+TimeoutStartSec=0
+
 [Install]
 WantedBy=default.target
