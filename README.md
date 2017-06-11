@@ -17,5 +17,5 @@ tree is the parent of the current directory.
 Use Stow to install one or more packages:
 
 ```bash
-stow emacs i3 vim X zsh
+stow emacs i3 polybar vim X zsh
 ```
