@@ -47,6 +47,7 @@
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)))
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(setq mouse-drag-copy-region t)
 
 ;; Start maximized
 (custom-set-variables
@@ -127,7 +128,20 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
   (global-set-key [escape] 'evil-exit-emacs-state)
-  (evil-set-initial-state 'term-mode 'emacs))
+  (evil-set-initial-state 'term-mode 'emacs)
+  ;; https://github.com/emacs-evil/evil/issues/532
+  (defun evil-visual-update-x-selection (&optional buffer)
+    "Update the X selection with the current visual region."
+    (with-current-buffer (or buffer (current-buffer))
+      (when (and (evil-visual-state-p)
+                 (fboundp 'x-set-selection)   ; <-- small change, hope it works ;)
+                 (or (not (boundp 'ns-initialized))
+                     (with-no-warnings ns-initialized))
+                 (not (eq evil-visual-selection 'block)))
+        (x-set-selection 'PRIMARY (buffer-substring-no-properties
+                                   evil-visual-beginning
+                                   evil-visual-end))
+        (setq x-last-selected-text-primary )))))
 
 (use-package evil-leader
     :ensure t
