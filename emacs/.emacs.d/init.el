@@ -141,7 +141,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
         (x-set-selection 'PRIMARY (buffer-substring-no-properties
                                    evil-visual-beginning
                                    evil-visual-end))
-        (setq x-last-selected-text-primary )))))
+        (defvar x-last-selected-text-primary)))))
 
 (use-package evil-leader
     :ensure t
