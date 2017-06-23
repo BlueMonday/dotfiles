@@ -59,10 +59,6 @@
   scroll-step 1
   scroll-preserve-screen-position 1)
 
-;; Disable Messages buffer on startup
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
-
 ;; Disable startup message in scratch buffer
 (setq-default initial-scratch-message nil)
 
