@@ -6,7 +6,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (protobuf-mode go-rename auctex rainbow-mode mode-icons evil-numbers projectile evil-magit magit latex-preview-pane tex web-mode yaml-mode py-isort python-docstring evil-leader org-evil org-bullets groovy-mode counsel-projectile ivy ivy-mode ag markdown-mode which-key mode-icons-mode dockerfile-mode company-go linum-relative vi-tilde-fringe vi-tilde-fringe-mode git-gutter evil-commentary rainbow-delimiters company-quickhelp company-jedi company helm-projectile powerline-evil fill-column-indicator column-marker flycheck powerline use-package dracula-theme helm evil))))
+    (tide protobuf-mode go-rename auctex rainbow-mode mode-icons evil-numbers projectile evil-magit magit latex-preview-pane tex web-mode yaml-mode py-isort python-docstring evil-leader org-evil org-bullets groovy-mode counsel-projectile ivy ivy-mode ag markdown-mode which-key mode-icons-mode dockerfile-mode company-go linum-relative vi-tilde-fringe vi-tilde-fringe-mode git-gutter evil-commentary rainbow-delimiters company-quickhelp company-jedi company helm-projectile powerline-evil fill-column-indicator column-marker flycheck powerline use-package dracula-theme helm evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

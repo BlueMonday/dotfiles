@@ -15,7 +15,7 @@ Spelling
 The aspell package is required in order to check spelling:
 
 ```bash
-pacman -S aspell
+pacman -S aspell aspell-en
 ```
 
 go-mode
@@ -54,4 +54,13 @@ LaTeX
 
 ```bash
 pacman -S auctex texlive-latexextra
+```
+
+tide
+----
+
+[tide](https://github.com/ananthakumaran/tide) requires having nodejs installed.
+
+```bash
+pacman -S nodejs
 ```
