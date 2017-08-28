@@ -92,7 +92,9 @@
   (counsel-projectile-on))
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'git-commit-mode-hook (lambda () (set-fill-column 72))))
 
 (use-package evil
   :ensure t
