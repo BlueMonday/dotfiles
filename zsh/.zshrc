@@ -12,5 +12,7 @@ plugins=(docker docker-compose git golang pip ssh-agent vagrant kubectl)
 source $ZSH/oh-my-zsh.sh
 
 alias -g emacs='emacsclient -nw'
+alias -g vim='nvim'
+
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
