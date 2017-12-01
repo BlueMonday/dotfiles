@@ -350,5 +350,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
+(use-package omnisharp
+  :ensure t
+  :config
+  (add-hook 'csharp-mode-hook 'omnisharp-mode)
+  (add-to-list 'company-backends 'company-omnisharp))
+
 (provide 'init)
 ;;; init.el ends here

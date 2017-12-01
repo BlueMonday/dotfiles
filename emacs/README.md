@@ -64,3 +64,12 @@ tide
 ```bash
 pacman -S nodejs
 ```
+
+omnisharp
+---------
+
+[omnisharp](https://github.com/OmniSharp/omnisharp-emacs) requires have `mono` installed.
+
+```bash
+pacman -S mono
+```
