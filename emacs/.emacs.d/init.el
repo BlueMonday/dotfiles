@@ -354,6 +354,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :config
   (add-hook 'csharp-mode-hook 'omnisharp-mode)
+  (setq omnisharp-server-executable-path "/opt/omnisharp-roslyn/OmniSharp.exe")
   (add-to-list 'company-backends 'company-omnisharp))
 
 (provide 'init)
