@@ -360,5 +360,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (use-package lua-mode
   :ensure t)
 
+(use-package terraform-mode
+  :ensure t)
+
 (provide 'init)
 ;;; init.el ends here
