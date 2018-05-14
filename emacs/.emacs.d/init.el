@@ -363,5 +363,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (use-package terraform-mode
   :ensure t)
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 (provide 'init)
 ;;; init.el ends here
