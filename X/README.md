@@ -38,8 +38,5 @@ Install the following perl extensions:
 The font for the URxvt terminal can be set through the font configuration
 parameters in `.Xresources`.
 
-Install the `Dejavu` font family:
-
-```bash
-sudo pacman -S ttf-dejavu
-```
+Install [powerline-fonts-git](https://aur.archlinux.org/packages/powerline-fonts-git/)
+from the AUR.
