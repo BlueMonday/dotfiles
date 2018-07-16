@@ -48,6 +48,7 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (setq mouse-drag-copy-region t)
+(setq visible-bell 1)
 
 ;; Start maximized
 (custom-set-variables
