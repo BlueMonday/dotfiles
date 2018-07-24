@@ -6,7 +6,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (editorconfig terraform-mode lua-mode omnisharp tide protobuf-mode go-rename auctex rainbow-mode mode-icons evil-numbers projectile evil-magit magit latex-preview-pane tex web-mode yaml-mode py-isort python-docstring evil-leader org-evil org-bullets groovy-mode counsel-projectile ivy ivy-mode ag markdown-mode which-key mode-icons-mode dockerfile-mode company-go linum-relative vi-tilde-fringe vi-tilde-fringe-mode git-gutter evil-commentary rainbow-delimiters company-quickhelp company-jedi company helm-projectile powerline-evil fill-column-indicator column-marker flycheck powerline use-package dracula-theme helm evil))))
+    (lua-mode omnisharp tide protobuf-mode latex-preview-pane auctex rainbow-mode web-mode yaml-mode py-isort python-docstring org-bullets org-evil groovy-mode ag markdown-mode which-key mode-icons dockerfile-mode vi-tilde-fringe git-gutter rainbow-delimiters fill-column-indicator flycheck company-go company-jedi company-quickhelp company powerline linum-relative evil-commentary evil-numbers evil-magit evil-leader evil magit counsel-projectile ivy projectile dracula-theme diminish use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

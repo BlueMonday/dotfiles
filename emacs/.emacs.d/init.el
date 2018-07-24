@@ -38,7 +38,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default fill-column 79)
 (global-hl-line-mode 1)
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+(setq display-line-numbers "%4d \u2502 ")
 (setq vc-follow-symlinks t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -168,12 +170,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (evil-commentary-mode))
 
-(use-package linum-relative
-  :ensure t
-  :config
-  (linum-relative-toggle)
-  (setq linum-relative-current-symbol ""))
-
 (use-package powerline
   :ensure t
   :config
@@ -245,7 +241,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :diminish git-gutter-mode
   :config
   (global-git-gutter-mode t)
-  (git-gutter:linum-setup)
   (setq  git-gutter:hide-gutter t
          git-gutter:modified-sign "!"))
 
