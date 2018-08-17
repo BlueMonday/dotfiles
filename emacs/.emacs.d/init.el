@@ -296,9 +296,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-(use-package python-docstring
-  :ensure t)
-
 (use-package py-isort
   :ensure t)
 
@@ -358,11 +355,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package terraform-mode
   :ensure t)
-
-(use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode 1))
 
 (provide 'init)
 ;;; init.el ends here
