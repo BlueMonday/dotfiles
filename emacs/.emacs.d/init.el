@@ -52,6 +52,9 @@
 (setq mouse-drag-copy-region t)
 (setq ring-bell-function 'ignore)
 
+;; Treat .mm files as Objective-C files.
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
+
 ;; Start maximized
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
