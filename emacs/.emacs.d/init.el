@@ -359,5 +359,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (use-package terraform-mode
   :ensure t)
 
+(use-package modern-cpp-font-lock
+  :ensure t
+  :config
+  (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode))
+
 (provide 'init)
 ;;; init.el ends here
