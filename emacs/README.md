@@ -28,7 +28,7 @@ packages installed:
 go get -u golang.org/x/tools/cmd/goimports
 go get -u golang.org/x/tools/cmd/guru
 go get -u golang.org/x/tools/cmd/godoc
-go get -u github.com/golang/lint/golint
+go get -u golang.org/x/lint/golint
 go get -u github.com/nsf/gocode
 go get -u golang.org/x/tools/cmd/gorename
 go get -u github.com/rogpeppe/godef
