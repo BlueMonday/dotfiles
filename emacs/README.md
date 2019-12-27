@@ -64,13 +64,3 @@ tide
 ```bash
 pacman -S nodejs
 ```
-
-omnisharp
----------
-
-[omnisharp](https://github.com/OmniSharp/omnisharp-emacs) requires having `mono` and `omnisharp-roslyn` installed.
-
-```bash
-pacman -S mono
-pacaur -S omnisharp-roslyn
-```

@@ -347,13 +347,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
-(use-package omnisharp
-  :ensure t
-  :config
-  (add-hook 'csharp-mode-hook 'omnisharp-mode)
-  (setq omnisharp-server-executable-path "/opt/omnisharp-roslyn/OmniSharp.exe")
-  (add-to-list 'company-backends 'company-omnisharp))
-
 (use-package lua-mode
   :ensure t)
 
@@ -364,6 +357,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :config
   (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode))
+
+(use-package rust-mode
+  :ensure t
+  :config
+  (setq rust-format-on-save t))
 
 (provide 'init)
 ;;; init.el ends here
