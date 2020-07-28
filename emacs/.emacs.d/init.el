@@ -347,9 +347,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
-(use-package lua-mode
-  :ensure t)
-
 (use-package terraform-mode
   :ensure t)
 
