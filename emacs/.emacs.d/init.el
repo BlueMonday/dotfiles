@@ -357,8 +357,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (use-package rust-mode
   :ensure t
+  :mode "\\.rs\\'"
   :config
   (setq rust-format-on-save t))
+
+(use-package toml-mode
+  :mode "\\.toml\\'"
+  :ensure t)
 
 (provide 'init)
 ;;; init.el ends here
