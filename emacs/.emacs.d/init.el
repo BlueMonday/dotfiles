@@ -343,7 +343,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :ensure t
   :mode "\\.rs\\'"
   :config
-  (setq rust-format-on-save t))
+  (setq rust-format-on-save t)
+  (setq rust-format-show-buffer nil))
+
+(use-package flycheck-rust
+  :ensure t
+  :config
+  (with-eval-after-load 'rust-mode
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
 
 (use-package toml-mode
   :mode "\\.toml\\'"
