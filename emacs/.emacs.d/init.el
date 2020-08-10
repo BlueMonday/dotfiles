@@ -264,11 +264,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq undo-tree-history-directory-alist
         (list (cons "." (expand-file-name "undo-tree-history" user-emacs-directory)))))
 
-(use-package mode-icons
-  :ensure t
-  :config
-  (mode-icons-mode))
-
 (use-package which-key
   :ensure t
   :diminish which-key-mode
