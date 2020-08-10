@@ -316,17 +316,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   :config
   (add-hook 'css-mode-hook 'rainbow-mode))
 
-(use-package tex
-  :ensure auctex
-  :config
-  (setq
-   TeX-auto-save t
-   TeX-parse-self t
-   TeX-PDF-mode t))
-
-(use-package latex-preview-pane
-  :ensure t)
-
 (use-package protobuf-mode
   :ensure t)
 

@@ -49,13 +49,6 @@ The install server command also needs to be run:
 M-x jedi:install-server
 ```
 
-LaTeX
------
-
-```bash
-pacman -S auctex texlive-latexextra
-```
-
 tide
 ----
 
